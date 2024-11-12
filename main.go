@@ -61,7 +61,8 @@ func main() {
 	//defer stop()
 	//<-ctx.Done()
 
-	wait_group.CondCase()
+	//wait_group.CondCase()
+	wait_group.MutexCase()
 }
 
 func animalLife(a _interface.Animal) {
