@@ -6,8 +6,11 @@ package main
 //import "go-learn/func"
 
 import (
+	"context"
+	_ctx "go-learn/context-env"
 	_interface "go-learn/interface"
-	"go-learn/wait_group"
+	"os"
+	"os/signal"
 )
 
 func main() {
@@ -28,7 +31,7 @@ func main() {
 	//generic.SimpleCase()
 	//generic.TTypeCase()
 	//
-	//ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, os.Kill)
+	//ctx, stop := signal.NotifyContext(context-env.Background(), os.Interrupt, os.Kill)
 	//defer stop()
 	//<-ctx.Done()
 
@@ -57,12 +60,19 @@ func main() {
 
 	//wait_group.WaitGroupCase()
 	//wait_group.WaitGroupCase1()
-	//ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, os.Kill)
+	//ctx, stop := signal.NotifyContext(context-env.Background(), os.Interrupt, os.Kill)
 	//defer stop()
 	//<-ctx.Done()
 
 	//wait_group.CondCase()
-	wait_group.MutexCase()
+	//wait_group.MutexCase()
+
+	_ctx.ContextSelect()
+	_ctx.ContextCase()
+
+	ctx, stop := signal.NotifyContext(context.Background(), os.Kill, os.Interrupt)
+	defer stop()
+	<-ctx.Done()
 }
 
 func animalLife(a _interface.Animal) {
