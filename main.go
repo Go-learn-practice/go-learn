@@ -1,25 +1,14 @@
 package main
 
-//import (
-//	"go-learn/basic"
-//)
-//import "go-learn/func"
-
-import (
-	"context"
-	_ctx "go-learn/context-env"
-	_interface "go-learn/interface"
-	"os"
-	"os/signal"
-)
+import "go-learn/basic"
 
 func main() {
 	//basic.VarDeclareCase()
 	//basic.StructCase()
-	//basic.NewCase()
+	basic.NewCase()
 	//basic.MapInit1()
 	//basic.MapInit2()
-	//basic.MakeCase()
+	basic.MakeCase()
 	//basic.SliceAndMapCase()
 	//basic.ConvertCase()
 
@@ -67,17 +56,17 @@ func main() {
 	//wait_group.CondCase()
 	//wait_group.MutexCase()
 
-	_ctx.ContextSelect()
-	_ctx.ContextCase()
-
-	ctx, stop := signal.NotifyContext(context.Background(), os.Kill, os.Interrupt)
-	defer stop()
-	<-ctx.Done()
+	//_ctx.ContextSelect()
+	//_ctx.ContextCase()
+	//
+	//ctx, stop := signal.NotifyContext(context.Background(), os.Kill, os.Interrupt)
+	//defer stop()
+	//<-ctx.Done()
 }
 
-func animalLife(a _interface.Animal) {
-	a.Each()
-	a.Drink()
-	a.Sleep()
-	a.Run()
-}
+//func animalLife(a _interface.Animal) {
+//	a.Each()
+//	a.Drink()
+//	a.Sleep()
+//	a.Run()
+//}
